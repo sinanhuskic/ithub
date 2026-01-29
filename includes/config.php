@@ -1,13 +1,27 @@
 <?php
 /**
  * IT Hub Zavidovici - Configuration
+ * Auto-detects environment (local vs production)
  */
 
-// Database Configuration
-define("DB_HOST", "localhost");
-define("DB_NAME", "ithubba_db");
-define("DB_USER", "root");
-define("DB_PASS", "");
+// Detect environment
+$isLocal = in_array($_SERVER["HTTP_HOST"] ?? "", ["localhost", "127.0.0.1"]) 
+           || strpos($_SERVER["HTTP_HOST"] ?? "", "localhost") !== false;
+
+// Database Configuration - Auto-detect
+if ($isLocal) {
+    // LOCAL (Laragon)
+    define("DB_HOST", "localhost");
+    define("DB_NAME", "ithubba_db");
+    define("DB_USER", "root");
+    define("DB_PASS", "");
+} else {
+    // PRODUCTION (cPanel)
+    define("DB_HOST", "localhost");
+    define("DB_NAME", "ithubba_ithubba_db");
+    define("DB_USER", "ithubba_admin");
+    define("DB_PASS", "TVOJA_PRODUKCIJSKA_LOZINKA");
+}
 define("DB_CHARSET", "utf8mb4");
 
 // Site Configuration - Auto-detect base URL
@@ -19,9 +33,14 @@ define("SITE_URL", $baseUrl);
 define("SITE_NAME", "IT Hub Zavidovici");
 define("SITE_DOMAIN", $protocol . $host . $baseUrl);
 
-// Error Reporting - OFF for production
-error_reporting(0);
-ini_set("display_errors", 0);
+// Error Reporting
+if ($isLocal) {
+    error_reporting(E_ALL);
+    ini_set("display_errors", 1);
+} else {
+    error_reporting(0);
+    ini_set("display_errors", 0);
+}
 
 // Timezone
 date_default_timezone_set("Europe/Sarajevo");

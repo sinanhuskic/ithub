@@ -1,6 +1,9 @@
 # IT Hub - Production Ready Configuration
 RewriteEngine On
-RewriteBase /ithub-vanilla/
+
+# Auto-detect RewriteBase
+RewriteCond %{REQUEST_URI}::$1 ^(/.+)(.+)::\2$
+RewriteRule ^(.*) - [E=BASE:%1]
 
 # Ako fajl ili folder postoji, koristi ga direktno
 RewriteCond %{REQUEST_FILENAME} -f [OR]
