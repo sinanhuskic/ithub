@@ -238,14 +238,14 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                     <input type="checkbox"
                            <?= $program["active"] ? "checked" : "" ?>
                            data-url="<?= url(
-                               "admin/program-toggle?id=" . $program["id"],
+                               "program-toggle?id=" . $program["id"],
                            ) ?>">
                     <span class="toggle-slider"></span>
                 </label>
 
                 <div class="program-card-actions">
                     <a href="<?= url(
-                        "admin/program-edit?id=" . $program["id"],
+                        "program-edit?id=" . $program["id"],
                     ) ?>"
                        class="btn btn-secondary btn-sm">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -255,7 +255,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                         Uredi
                     </a>
                     <a href="<?= url(
-                        "admin/program-delete?id=" . $program["id"],
+                        "program-delete?id=" . $program["id"],
                     ) ?>"
                        class="btn btn-danger btn-sm"
                        data-delete>
@@ -272,7 +272,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 </div>
 
 <input type="hidden" id="reorderUrl" value="<?= url(
-    "admin/program-reorder",
+    "program-reorder",
 ) ?>">
 <?php else: ?>
 <div class="card">

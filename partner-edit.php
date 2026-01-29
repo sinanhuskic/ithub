@@ -164,7 +164,7 @@ unset($_SESSION["flash_error"]);
 </div>
 
 <form method="POST" action="<?= url(
-    "admin/partners/update/" . $partner["id"],
+    "partner-update?id=" . $partner["id"],
 ) ?>" enctype="multipart/form-data" data-validate>
     <?= Auth::csrfField() ?>
 
@@ -216,7 +216,7 @@ unset($_SESSION["flash_error"]);
                 Sačuvaj promjene
             </button>
             <a href="<?= url(
-                "admin/partners",
+                "partners",
             ) ?>" class="btn btn-secondary">Odustani</a>
         </div>
     </div>

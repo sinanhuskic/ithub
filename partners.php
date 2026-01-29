@@ -210,7 +210,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                 <input type="checkbox"
                        <?= $partner["active"] ? "checked" : "" ?>
                        data-url="<?= url(
-                           "admin/partner-toggle?id=" . $partner["id"],
+                           "partner-toggle?id=" . $partner["id"],
                        ) ?>">
                 <span class="toggle-slider"></span>
             </label>
@@ -239,7 +239,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 </div>
 
 <input type="hidden" id="reorderUrl" value="<?= url(
-    "admin/partner-reorder",
+    "partner-reorder",
 ) ?>">
 <?php else: ?>
 <div class="card">

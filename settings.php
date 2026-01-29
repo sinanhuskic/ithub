@@ -163,7 +163,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 
 <!-- Contact Settings -->
 <form method="POST" action="<?= url(
-    "admin/settings-contact",
+    "settings-contact",
 ) ?>" class="card" style="margin-bottom: 24px;">
     <?= Auth::csrfField() ?>
     <div class="card-header">
@@ -262,7 +262,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 
 <!-- About Settings -->
 <form method="POST" action="<?= url(
-    "admin/settings-about",
+    "settings-about",
 ) ?>" class="card" style="margin-bottom: 24px;">
     <?= Auth::csrfField() ?>
     <div class="card-header">

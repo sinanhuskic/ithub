@@ -165,7 +165,7 @@ unset($_SESSION['flash_error']);
     </div>
 </div>
 
-<form method="POST" action="<?= url('programs/update/' . $program['id']) ?>" data-validate>
+<form method="POST" action="<?= url('program-update?id=' . $program['id']) ?>" data-validate>
     <?= Auth::csrfField() ?>
 
     <div class="card" style="margin-bottom: 24px;">
