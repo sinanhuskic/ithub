@@ -18,9 +18,9 @@ if ($isLocal) {
 } else {
     // PRODUCTION (cPanel)
     define("DB_HOST", "localhost");
-    define("DB_NAME", "ithubba_ithubba_db");
-    define("DB_USER", "ithubba_admin");
-    define("DB_PASS", "TVOJA_PRODUKCIJSKA_LOZINKA");
+    define("DB_NAME", "ithubba_db");
+    define("DB_USER", "ithubba_user");
+    define("DB_PASS", "Ebj8~z(I[MDtlZX=");
 }
 define("DB_CHARSET", "utf8mb4");
 
