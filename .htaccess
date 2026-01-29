@@ -1,0 +1,103 @@
+# IT Hub - Production Ready Configuration
+RewriteEngine On
+RewriteBase /ithub-vanilla/
+
+# Ako fajl ili folder postoji, koristi ga direktno
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Homepage
+RewriteRule ^$ index.php [L]
+
+# Dashboard
+RewriteRule ^dashboard/?$ dashboard.php [L,QSA]
+
+# Login/Logout
+RewriteRule ^login/?$ login.php [L,QSA]
+RewriteRule ^logout/?$ logout.php [L,QSA]
+
+# Programs
+RewriteRule ^programs/?$ programs.php [L,QSA]
+RewriteRule ^program-create/?$ program-create.php [L,QSA]
+RewriteRule ^program-edit/?$ program-edit.php [L,QSA]
+RewriteRule ^program-store/?$ program-store.php [L,QSA]
+RewriteRule ^program-update/?$ program-update.php [L,QSA]
+RewriteRule ^program-delete/?$ program-delete.php [L,QSA]
+RewriteRule ^program-toggle/?$ program-toggle.php [L,QSA]
+RewriteRule ^program-reorder/?$ program-reorder.php [L,QSA]
+
+# Gallery
+RewriteRule ^gallery/?$ gallery.php [L,QSA]
+RewriteRule ^gallery-upload/?$ gallery-upload.php [L,QSA]
+RewriteRule ^gallery-update/?$ gallery-update.php [L,QSA]
+RewriteRule ^gallery-delete/?$ gallery-delete.php [L,QSA]
+RewriteRule ^gallery-toggle/?$ gallery-toggle.php [L,QSA]
+RewriteRule ^gallery-reorder/?$ gallery-reorder.php [L,QSA]
+
+# Partners
+RewriteRule ^partners/?$ partners.php [L,QSA]
+RewriteRule ^partner-create/?$ partner-create.php [L,QSA]
+RewriteRule ^partner-edit/?$ partner-edit.php [L,QSA]
+RewriteRule ^partner-store/?$ partner-store.php [L,QSA]
+RewriteRule ^partner-update/?$ partner-update.php [L,QSA]
+RewriteRule ^partner-delete/?$ partner-delete.php [L,QSA]
+RewriteRule ^partner-toggle/?$ partner-toggle.php [L,QSA]
+RewriteRule ^partner-reorder/?$ partner-reorder.php [L,QSA]
+
+# Settings
+RewriteRule ^settings/?$ settings.php [L,QSA]
+RewriteRule ^settings-contact/?$ settings-contact.php [L,QSA]
+RewriteRule ^settings-about/?$ settings-about.php [L,QSA]
+RewriteRule ^settings-stats/?$ settings-stats.php [L,QSA]
+
+# Blokiraj pristup includes folderu
+RewriteRule ^includes/ - [F,L]
+
+# Security - Disable directory listing
+Options -Indexes
+
+# Disable server signature
+ServerSignature Off
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Protect sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "(\.log|\.sql|\.bak)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Cache static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 month"
+    ExpiresByType font/woff "access plus 1 month"
+</IfModule>
+
+# Enable GZIP compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css application/javascript application/json image/svg+xml
+</IfModule>

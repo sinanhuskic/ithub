@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ithub.ba/sitemap.xml
+
+# Blokiraj pristup admin stranicama
+Disallow: /login
+Disallow: /logout
+Disallow: /dashboard
+Disallow: /programs
+Disallow: /partners
+Disallow: /gallery
+Disallow: /settings
+Disallow: /includes/

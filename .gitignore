@@ -1,0 +1,19 @@
+# Deploy scripts - don't push to production
+fix-permissions.php
+deploy.php
+deploy.log
+
+# Uploads (user content)
+public/uploads/gallery/*
+public/uploads/partners/*
+!public/uploads/gallery/.gitkeep
+!public/uploads/partners/.gitkeep
+
+# Local environment
+.env
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
