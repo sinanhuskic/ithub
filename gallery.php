@@ -204,7 +204,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                 <input type="checkbox"
                        <?= $image["active"] ? "checked" : "" ?>
                        data-url="<?= url(
-                           "gallery-toggle?id=" . $image["id"],
+                           "api/gallery-toggle?id=" . $image["id"],
                        ) ?>">
                 <span class="toggle-slider"></span>
             </label>
@@ -245,7 +245,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                 </button>
             </div>
             <form method="POST" action="<?= url(
-                "gallery-update?id=" . $image["id"],
+                "api/gallery-update?id=" . $image["id"],
             ) ?>">
                 <?= Auth::csrfField() ?>
                 <div class="modal-body">
@@ -297,7 +297,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 </div>
 
 <input type="hidden" id="reorderUrl" value="<?= url(
-    "gallery-reorder",
+    "api/gallery-reorder",
 ) ?>">
 <?php else: ?>
 <div class="card">
@@ -334,7 +334,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
             </button>
         </div>
         <form method="POST" action="<?= url(
-            "gallery-upload",
+            "api/gallery-upload",
         ) ?>" enctype="multipart/form-data">
             <?= Auth::csrfField() ?>
             <div class="modal-body">
@@ -690,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             deleteImageAlt.textContent = altText;
             deleteConfirmBtn.href = '<?= url(
-                "gallery-delete?id=",
+                "api/gallery-delete?id=",
             ) ?>' + imageId;
 
             deleteModal.classList.add('active');

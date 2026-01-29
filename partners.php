@@ -210,7 +210,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                 <input type="checkbox"
                        <?= $partner["active"] ? "checked" : "" ?>
                        data-url="<?= url(
-                           "partner-toggle?id=" . $partner["id"],
+                           "api/partner-toggle?id=" . $partner["id"],
                        ) ?>">
                 <span class="toggle-slider"></span>
             </label>
@@ -224,7 +224,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                 Uredi
             </a>
 
-            <a href="<?= url("partner-delete?id=" . $partner["id"]) ?>"
+            <a href="<?= url("api/partner-delete?id=" . $partner["id"]) ?>"
                class="btn btn-danger btn-sm"
                data-delete>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -239,7 +239,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 </div>
 
 <input type="hidden" id="reorderUrl" value="<?= url(
-    "partner-reorder",
+    "api/partner-reorder",
 ) ?>">
 <?php else: ?>
 <div class="card">

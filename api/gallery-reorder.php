@@ -1,9 +1,9 @@
 <?php
-require_once __DIR__ . "/includes/config.php";
-require_once __DIR__ . "/includes/functions.php";
-require_once __DIR__ . "/includes/database.php";
-require_once __DIR__ . "/includes/auth.php";
-require_once __DIR__ . "/includes/models/Partner.php";
+require_once dirname(__DIR__) . "/includes/config.php";
+require_once dirname(__DIR__) . "/includes/functions.php";
+require_once dirname(__DIR__) . "/includes/database.php";
+require_once dirname(__DIR__) . "/includes/auth.php";
+require_once dirname(__DIR__) . "/includes/models/Gallery.php";
 
 Auth::requireAuth();
 
@@ -19,7 +19,7 @@ if (empty($order)) {
 
 try {
     foreach ($order as $item) {
-        Partner::update($item["id"], ["sort_order" => $item["sort_order"]]);
+        Gallery::update($item["id"], ["sort_order" => $item["sort_order"]]);
     }
     echo json_encode(["success" => true]);
 } catch (Exception $e) {

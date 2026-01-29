@@ -163,7 +163,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 
 <!-- Contact Settings -->
 <form method="POST" action="<?= url(
-    "settings-contact",
+    "api/settings-contact",
 ) ?>" class="card" style="margin-bottom: 24px;">
     <?= Auth::csrfField() ?>
     <div class="card-header">
@@ -262,7 +262,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 
 <!-- About Settings -->
 <form method="POST" action="<?= url(
-    "settings-about",
+    "api/settings-about",
 ) ?>" class="card" style="margin-bottom: 24px;">
     <?= Auth::csrfField() ?>
     <div class="card-header">
@@ -337,7 +337,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
 </form>
 
 <!-- Stats Settings -->
-<form method="POST" action="<?= url("settings-stats") ?>" class="card">
+<form method="POST" action="<?= url("api/settings-stats") ?>" class="card">
     <?= Auth::csrfField() ?>
     <div class="card-header">
         <h2 class="card-title">Statistika</h2>
