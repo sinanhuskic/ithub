@@ -44,6 +44,7 @@ function getProgramsFromDatabase()
             "icon" => $p["icon"],
             "techs" => $p["technologies"],
             "featured" => (bool) $p["featured"],
+            "registration_url" => $p["registration_url"] ?? "",
             "details" => [
                 "period" => $p["period"],
                 "format" => $p["format"],
