@@ -288,7 +288,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                     <input type="checkbox"
                            <?= $program["active"] ? "checked" : "" ?>
                            data-url="<?= url(
-                               "api/program-toggle?id=" . $program["id"],
+                               "api/program-toggle.php?id=" . $program["id"],
                            ) ?>">
                     <span class="toggle-slider"></span>
                 </label>
@@ -303,7 +303,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
                         Uredi
                     </a>
                     <a href="<?= url(
-                        "api/program-delete?id=" . $program["id"],
+                        "api/program-delete.php?id=" . $program["id"],
                     ) ?>"
                        class="btn btn-danger btn-sm"
                        data-delete>
@@ -319,7 +319,9 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
     <?php endforeach; ?>
 </div>
 
-<input type="hidden" id="reorderUrl" value="<?= url("api/program-reorder") ?>">
+<input type="hidden" id="reorderUrl" value="<?= url(
+    "api/program-reorder.php",
+) ?>">
 <?php else: ?>
 <div class="card">
     <div class="empty-state">

@@ -208,7 +208,7 @@ unset($_SESSION["flash_error"]);
 </div>
 
 <form method="POST" action="<?= url(
-    "api/partner-store",
+    "api/partner-store.php",
 ) ?>" enctype="multipart/form-data" data-validate>
     <?= Auth::csrfField() ?>
 

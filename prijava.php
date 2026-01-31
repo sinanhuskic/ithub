@@ -915,7 +915,7 @@ $error = flash("flash_error");
 
             <div class="wizard-card">
                 <form method="POST" action="<?= url(
-                    "api/application-store",
+                    "api/application-store.php",
                 ) ?>" id="applicationForm">
                     <input type="hidden" name="program_id" value="<?= e(
                         $program["id"],

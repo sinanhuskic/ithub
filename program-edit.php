@@ -224,7 +224,7 @@ unset($_SESSION["flash_error"]);
 </div>
 
 <form method="POST" action="<?= url(
-    "program-update?id=" . $program["id"],
+    "api/program-update.php?id=" . $program["id"],
 ) ?>" data-validate>
     <?= Auth::csrfField() ?>
 

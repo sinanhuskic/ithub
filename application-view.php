@@ -799,7 +799,7 @@ $error = flash("flash_error");
                             <h3>Akcije</h3>
 
                             <form method="POST" action="<?= url(
-                                "api/application-status",
+                                "api/application-status.php",
                             ) ?>">
                                 <input type="hidden" name="id" value="<?= $app[
                                     "id"
@@ -820,7 +820,7 @@ $error = flash("flash_error");
                             </form>
 
                             <form method="POST" action="<?= url(
-                                "api/application-notes",
+                                "api/application-notes.php",
                             ) ?>">
                                 <input type="hidden" name="id" value="<?= $app[
                                     "id"
@@ -833,7 +833,7 @@ $error = flash("flash_error");
                             </form>
 
                             <form method="POST" action="<?= url(
-                                "api/application-delete",
+                                "api/application-delete.php",
                             ) ?>" onsubmit="return confirm('Da li ste sigurni da želite obrisati ovu prijavu?');">
                                 <input type="hidden" name="id" value="<?= $app[
                                     "id"

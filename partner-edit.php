@@ -220,7 +220,7 @@ unset($_SESSION["flash_error"]);
 </div>
 
 <form method="POST" action="<?= url(
-    "api/partner-update?id=" . $partner["id"],
+    "api/partner-update.php?id=" . $partner["id"],
 ) ?>" enctype="multipart/form-data" data-validate>
     <?= Auth::csrfField() ?>
 
