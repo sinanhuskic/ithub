@@ -819,8 +819,8 @@ function getDefaultPrograms()
             <?php endif; ?>
 
             <?php if (!empty($program["registration_url"])): ?>
-            <a href="<?= e(
-                $program["registration_url"],
+            <a href="<?= url(
+                trim($program["registration_url"], "/"),
             ) ?>" class="btn btn-primary program-apply-btn">
                 Prijavi se
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
