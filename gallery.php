@@ -16,20 +16,24 @@ $active = "gallery";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= e($title ?? 'Admin Panel') ?> - IT Hub Zavidovići</title>
-    <link rel="icon" type="image/svg+xml" href="<?= asset('images/favicon.svg') ?>">
+    <title><?= e($title ?? "Admin Panel") ?> - IT Hub Zavidovići</title>
+    <link rel="icon" type="image/svg+xml" href="<?= asset(
+        "images/favicon.svg",
+    ) ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="<?= asset('css/admin.css') ?>">
+    <link rel="stylesheet" href="<?= asset("css/admin.css") ?>">
 </head>
 <body>
     <div class="admin-wrapper">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <a href="<?= url('dashboard') ?>" class="sidebar-logo">
-                    <img src="<?= asset('images/logo-icon.svg') ?>" alt="IT Hub">
+                <a href="<?= url("dashboard") ?>" class="sidebar-logo">
+                    <img src="<?= asset(
+                        "images/logo-icon.svg",
+                    ) ?>" alt="IT Hub">
                     <span>IT Hub Admin</span>
                 </a>
             </div>
@@ -37,7 +41,11 @@ $active = "gallery";
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="<?= url('dashboard') ?>" class="<?= ($active ?? '') === 'dashboard' ? 'active' : '' ?>">
+                        <a href="<?= url("dashboard") ?>" class="<?= ($active ??
+    "") ===
+"dashboard"
+    ? "active"
+    : "" ?>">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="3" width="7" height="7"></rect>
                                 <rect x="14" y="3" width="7" height="7"></rect>
@@ -48,7 +56,11 @@ $active = "gallery";
                         </a>
                     </li>
                     <li>
-                        <a href="<?= url('programs') ?>" class="<?= ($active ?? '') === 'programs' ? 'active' : '' ?>">
+                        <a href="<?= url("programs") ?>" class="<?= ($active ??
+    "") ===
+"programs"
+    ? "active"
+    : "" ?>">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="16 18 22 12 16 6"></polyline>
                                 <polyline points="8 6 2 12 8 18"></polyline>
@@ -57,7 +69,11 @@ $active = "gallery";
                         </a>
                     </li>
                     <li>
-                        <a href="<?= url('gallery') ?>" class="<?= ($active ?? '') === 'gallery' ? 'active' : '' ?>">
+                        <a href="<?= url("gallery") ?>" class="<?= ($active ??
+    "") ===
+"gallery"
+    ? "active"
+    : "" ?>">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                                 <circle cx="8.5" cy="8.5" r="1.5"></circle>
@@ -67,7 +83,11 @@ $active = "gallery";
                         </a>
                     </li>
                     <li>
-                        <a href="<?= url('partners') ?>" class="<?= ($active ?? '') === 'partners' ? 'active' : '' ?>">
+                        <a href="<?= url("partners") ?>" class="<?= ($active ??
+    "") ===
+"partners"
+    ? "active"
+    : "" ?>">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
@@ -78,7 +98,27 @@ $active = "gallery";
                         </a>
                     </li>
                     <li>
-                        <a href="<?= url('settings') ?>" class="<?= ($active ?? '') === 'settings' ? 'active' : '' ?>">
+                        <a href="<?= url(
+                            "applications",
+                        ) ?>" class="<?= ($active ?? "") === "applications"
+    ? "active"
+    : "" ?>">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            <span>Prijave</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= url("settings") ?>" class="<?= ($active ??
+    "") ===
+"settings"
+    ? "active"
+    : "" ?>">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <circle cx="12" cy="12" r="3"></circle>
                                 <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -92,14 +132,22 @@ $active = "gallery";
             <div class="sidebar-footer">
                 <div class="user-info">
                     <div class="user-avatar">
-                        <?= strtoupper(substr(Auth::user()['name'] ?? 'A', 0, 1)) ?>
+                        <?= strtoupper(
+                            substr(Auth::user()["name"] ?? "A", 0, 1),
+                        ) ?>
                     </div>
                     <div class="user-details">
-                        <span class="user-name"><?= e(Auth::user()['name'] ?? 'Admin') ?></span>
-                        <span class="user-email"><?= e(Auth::user()['email'] ?? '') ?></span>
+                        <span class="user-name"><?= e(
+                            Auth::user()["name"] ?? "Admin",
+                        ) ?></span>
+                        <span class="user-email"><?= e(
+                            Auth::user()["email"] ?? "",
+                        ) ?></span>
                     </div>
                 </div>
-                <a href="<?= url('logout') ?>" class="logout-btn" title="Odjava">
+                <a href="<?= url(
+                    "logout",
+                ) ?>" class="logout-btn" title="Odjava">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                         <polyline points="16 17 21 12 16 7"></polyline>
@@ -120,12 +168,14 @@ $active = "gallery";
                         <line x1="3" y1="18" x2="21" y2="18"></line>
                     </svg>
                 </button>
-                <span class="mobile-title"><?= e($title ?? 'Admin Panel') ?></span>
+                <span class="mobile-title"><?= e(
+                    $title ?? "Admin Panel",
+                ) ?></span>
             </header>
 
             <!-- Page Content -->
             <div class="page-content">
-                
+
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -296,9 +346,7 @@ unset($_SESSION["flash_success"], $_SESSION["flash_error"]);
     <?php endforeach; ?>
 </div>
 
-<input type="hidden" id="reorderUrl" value="<?= url(
-    "api/gallery-reorder",
-) ?>">
+<input type="hidden" id="reorderUrl" value="<?= url("api/gallery-reorder") ?>">
 <?php else: ?>
 <div class="card">
     <div class="empty-state">
@@ -944,6 +992,6 @@ function showGalleryNotification(message, type = 'success') {
     <!-- Mobile Sidebar Overlay -->
     <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
-    <script src="<?= asset('js/admin.js') ?>"></script>
+    <script src="<?= asset("js/admin.js") ?>"></script>
 </body>
 </html>

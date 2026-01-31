@@ -50,6 +50,18 @@ RewriteRule ^api/partner-reorder/?$ api/partner-reorder.php [L,QSA]
 
 # Settings
 RewriteRule ^settings/?$ settings.php [L,QSA]
+
+# Prijava (Application Form)
+RewriteRule ^prijava/?$ prijava.php [L,QSA]
+
+# Applications
+RewriteRule ^applications/?$ applications.php [L,QSA]
+RewriteRule ^applications-list/?$ applications-list.php [L,QSA]
+RewriteRule ^application-view/?$ application-view.php [L,QSA]
+RewriteRule ^api/application-store/?$ api/application-store.php [L,QSA]
+RewriteRule ^api/application-status/?$ api/application-status.php [L,QSA]
+RewriteRule ^api/application-notes/?$ api/application-notes.php [L,QSA]
+RewriteRule ^api/application-delete/?$ api/application-delete.php [L,QSA]
 RewriteRule ^api/settings-contact/?$ api/settings-contact.php [L,QSA]
 RewriteRule ^api/settings-about/?$ api/settings-about.php [L,QSA]
 RewriteRule ^api/settings-stats/?$ api/settings-stats.php [L,QSA]
