@@ -30,7 +30,8 @@ try {
 $title = "IT Hub Zavidovići | Centar za IT edukaciju i inovacije";
 $meta_description = "IT Hub Zavidovići - Centar za IT edukaciju i inovacije";
 
-function getProgramsFromDatabase() {
+function getProgramsFromDatabase()
+{
     $dbPrograms = Program::allWithDecoded(true);
     $programs = [];
     foreach ($dbPrograms as $p) {
@@ -57,7 +58,8 @@ function getProgramsFromDatabase() {
     return $programs ?: getDefaultPrograms();
 }
 
-function getDefaultStats() {
+function getDefaultStats()
+{
     return [
         ["current" => 40, "planned" => 200, "label" => "Sati edukacije"],
         ["current" => 6, "planned" => 30, "label" => "Polaznika"],
@@ -66,23 +68,33 @@ function getDefaultStats() {
     ];
 }
 
-function getDefaultPrograms() {
+function getDefaultPrograms()
+{
     return [
         [
             "title" => "ZeroToHero SaaS",
-            "description" => "Od početnika do programera: web development i SaaS tehnologije.",
+            "description" =>
+                "Od početnika do programera: web development i SaaS tehnologije.",
             "duration" => "40 sati (završen)",
             "level" => "Početnik",
             "level_class" => "",
             "icon" => "code",
-            "techs" => ["html5", "css3", "javascript", "php", "laravel", "mysql"],
+            "techs" => [
+                "html5",
+                "css3",
+                "javascript",
+                "php",
+                "laravel",
+                "mysql",
+            ],
             "featured" => true,
             "details" => [
                 "period" => "04.10.2025. do 20.12.2025.",
                 "format" => "10 edukacija × 4 sata, uživo u IT HUB Zavidovići",
                 "polaznici" => "6 polaznika",
                 "status" => "Završen",
-                "opis" => "Program je vodio polaznike od temeljnih koncepata računarstva do samostalnog rada na stvarnim projektima.",
+                "opis" =>
+                    "Program je vodio polaznike od temeljnih koncepata računarstva do samostalnog rada na stvarnim projektima.",
                 "highlights" => [
                     "Praktičan rad na realnim projektima",
                     "Mentorstvo profesionalnog developera",
@@ -256,7 +268,7 @@ function getDefaultPrograms() {
 
 
     <main id="main-content">
-        
+
 
 <!-- Hero Section -->
 <section class="hero" id="home">
@@ -656,9 +668,10 @@ function getDefaultPrograms() {
             <div class="program-card-wrapper<?= $index >= 3
                 ? " hidden-program"
                 : "" ?>">
-            <div class="program-card<?= isset($program["featured"]) && $program["featured"]
-    ? " featured"
-    : "" ?>" role="button" tabindex="0">
+            <div class="program-card<?= isset($program["featured"]) &&
+            $program["featured"]
+                ? " featured"
+                : "" ?>" role="button" tabindex="0">
     <div class="program-card-header">
         <div class="program-icon">
             <?php if ($program["icon"] === "code"): ?>
@@ -804,12 +817,23 @@ function getDefaultPrograms() {
             </div>
             <?php endif; ?>
 
-            <a href="#contact" class="btn btn-primary program-apply-btn">
+            <?php if (!empty($program["registration_url"])): ?>
+            <a href="<?= e(
+                $program["registration_url"],
+            ) ?>" class="btn btn-primary program-apply-btn">
                 Prijavi se
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
             </a>
+            <?php else: ?>
+            <a href="#contact" class="btn btn-primary program-apply-btn">
+                Kontaktiraj nas
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+            <?php endif; ?>
         </div>
     </div>
     <?php endif; ?>
