@@ -357,6 +357,18 @@ $key
                     $program["requirements"],
                 ) ?></textarea>
             </div>
+
+            <div class="form-group">
+                <label class="form-label" for="registration_url">Link za prijavu</label>
+                <input type="text" id="registration_url" name="registration_url" class="form-input"
+                       value="<?= e($program["registration_url"] ?? "") ?>"
+                       placeholder="npr. prijava?program=<?= e(
+                           $program["id"],
+                       ) ?>">
+                <small style="color: var(--text-muted); margin-top: 6px; display: block;">
+                    Ostavite prazno ako program trenutno ne prima prijave. Format: <code>prijava?program=ID</code>
+                </small>
+            </div>
         </div>
     </div>
 

@@ -9,13 +9,13 @@ Auth::requireAuth();
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     header("Location: " . url("programs"));
-    exit;
+    exit();
 }
 
 if (!Auth::verifyCsrfToken($_POST["_token"] ?? "")) {
     setFlash("flash_error", "Nevažeći sigurnosni token.");
     header("Location: " . url("program-create"));
-    exit;
+    exit();
 }
 
 $data = [
@@ -34,13 +34,14 @@ $data = [
     "full_description" => trim($_POST["full_description"] ?? ""),
     "highlights" => array_filter($_POST["highlights"] ?? []),
     "requirements" => trim($_POST["requirements"] ?? ""),
-    "sort_order" => (int)($_POST["sort_order"] ?? 0),
+    "registration_url" => trim($_POST["registration_url"] ?? ""),
+    "sort_order" => (int) ($_POST["sort_order"] ?? 0),
 ];
 
 if (!$data["title"]) {
     setFlash("flash_error", "Naziv programa je obavezan.");
     header("Location: " . url("program-create"));
-    exit;
+    exit();
 }
 
 try {

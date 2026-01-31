@@ -318,6 +318,15 @@ unset($_SESSION["flash_error"]);
                 <textarea id="requirements" name="requirements" class="form-textarea" rows="3"
                           placeholder="Uslovi koje polaznici trebaju ispuniti..."></textarea>
             </div>
+
+            <div class="form-group">
+                <label class="form-label" for="registration_url">Link za prijavu</label>
+                <input type="text" id="registration_url" name="registration_url" class="form-input"
+                       placeholder="npr. prijava?program=ID">
+                <small style="color: var(--text-muted); margin-top: 6px; display: block;">
+                    Ostavite prazno ako program trenutno ne prima prijave. Format: <code>prijava?program=ID</code>
+                </small>
+            </div>
         </div>
     </div>
 
