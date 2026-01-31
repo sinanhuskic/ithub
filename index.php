@@ -811,7 +811,7 @@ function getDefaultPrograms()
             </div>
             <?php endif; ?>
 
-            <?php if (isset($program["details"]["uslovi"])): ?>
+            <?php if (!empty($program["details"]["uslovi"])): ?>
             <div class="details-requirements">
                 <h4>Uslovi</h4>
                 <p><?= e($program["details"]["uslovi"]) ?></p>
