@@ -18,13 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $email = trim($_POST["email"] ?? "");
         $password = $_POST["password"] ?? "";
-        
+
         $user = User::findByEmail($email);
-        
+
         if ($user && User::verifyPassword($password, $user["password"])) {
             Auth::login($user);
             header("Location: " . url("dashboard"));
-            exit;
+            exit();
         } else {
             $_SESSION["login_error"] = "Pogrešan email ili lozinka.";
         }
@@ -264,7 +264,7 @@ $title = "Prijava - Admin Panel";
                         id="email"
                         name="email"
                         class="form-input"
-                        placeholder="admin@ithub.ba"
+                        placeholder="email@primjer.ba"
                         required
                         autocomplete="email"
                     >
